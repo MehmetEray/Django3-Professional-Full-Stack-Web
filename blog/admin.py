@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import category, article, comment
+from blog.models import category, article, comment, communication
 
 
 # Register your models here.
@@ -29,11 +29,23 @@ admin.site.register(article, articlesAdmin)
 
 class commentAdmin(admin.ModelAdmin):
     search_fields = (
-        'author','article','comment',
+        'author', 'article', 'comment',
     )
     list_display = (
-        'author','article','comment',
+        'author', 'article', 'comment',
     )
 
 
 admin.site.register(comment, commentAdmin)
+
+
+class communicationAdmin(admin.ModelAdmin):
+    search_fields = (
+        'email',
+    )
+    list_display = (
+        'email',
+    )
+
+
+admin.site.register(communication, communicationAdmin)

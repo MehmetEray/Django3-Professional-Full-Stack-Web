@@ -24,7 +24,7 @@ class article(models.Model):
     edited_date = models.DateTimeField(auto_now=True)
     slug = AutoSlugField(populate_from='header', unique=True)
     categories = models.ManyToManyField(category, related_name='article')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='articles')
+    author = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='articles')
 
     class Meta:
         db_table = 'Article'
@@ -34,7 +34,7 @@ class article(models.Model):
 
 
 class comment(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comment')
+    author = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='comment')
     article = models.ForeignKey(article, on_delete=models.CASCADE, related_name='comments')
     comment = models.TextField()
     existed_date = models.DateTimeField(auto_now_add=True)
@@ -45,3 +45,16 @@ class comment(models.Model):
 
     def __str__(self):
         return self.author
+
+
+class communication(models.Model):
+    email = models.EmailField(max_length=250)
+    fullname = models.CharField(max_length=150)
+    message = models.TextField()
+    existed_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'communication'
+
+    def __str__(self):
+        return self.email

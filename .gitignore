@@ -4,6 +4,7 @@
 .idea
 __pycache__
 article_pictures
+avatar
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
