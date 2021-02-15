@@ -6,3 +6,4 @@
 -Settings.py parsing (development-production)
 -Template extending
 -Bootstrap
+-Pipenv virtual environment Usage
