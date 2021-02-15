@@ -4,3 +4,4 @@
 -SQLite3 Usage
 -Django Model Based
 -Settings.py parsing (development-production)
+-Template extending
