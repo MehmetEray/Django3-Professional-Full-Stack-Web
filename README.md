@@ -5,3 +5,4 @@
 -Django Model Based
 -Settings.py parsing (development-production)
 -Template extending
+-Bootstrap
