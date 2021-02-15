@@ -6,4 +6,8 @@ from django.http import HttpResponse
 
 
 def iletisim(request):
-    return HttpResponse('<h1>merhaba</h1>')
+    return render(request, 'pages/iletisim.html', context={})
+
+
+def anasayfa(request):
+    return render(request, 'pages/anasayfa.html', context={})
